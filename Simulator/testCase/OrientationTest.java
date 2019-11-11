@@ -1,11 +1,8 @@
-package test.com.junhanliu.pacmanSimulator;
-
-import com.junhanliu.pacmanSimulator.exception.PacmanException;
-import com.junhanliu.pacmanSimulator.utilities.Direction;
-import com.junhanliu.pacmanSimulator.utilities.Orientation;
+import exception.PacmanException;
 import org.junit.Assert;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import utilities.Direction;
+import utilities.Orientation;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,14 +10,6 @@ class OrientationTest {
 
     Direction leftSide = Direction.LEFT;
     Direction rightSide = Direction.RIGHT;
-
-    @Test
-    void turnWhenFacingEAST() {
-        Orientation orientation = Orientation.EAST;
-
-        Assert.assertEquals(Orientation.NORTH,orientation.turn(orientation,leftSide));
-        Assert.assertEquals(Orientation.SOUTH, orientation.turn(orientation,rightSide));
-    }
 
     @Test
     void turnWhenFacingSOUTH() {
@@ -67,4 +56,6 @@ class OrientationTest {
         assertTrue(error instanceof PacmanException);
 
     }
+
+
 }

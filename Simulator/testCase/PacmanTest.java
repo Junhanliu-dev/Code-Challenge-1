@@ -1,10 +1,7 @@
-package test.com.junhanliu.pacmanSimulator;
-
-import com.junhanliu.pacmanSimulator.Pacman;
-import com.junhanliu.pacmanSimulator.utilities.Coordination;
-import com.junhanliu.pacmanSimulator.utilities.Orientation;
-import com.junhanliu.pacmanSimulator.utilities.Position;
 import org.junit.jupiter.api.Test;
+import utilities.Coordination;
+import utilities.Orientation;
+import utilities.Position;
 
 import static org.junit.jupiter.api.Assertions.*;
 
