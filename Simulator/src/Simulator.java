@@ -57,7 +57,7 @@ public class Simulator {
                         break;
 
                     case MOVE:
-                        if (table.isInsideTable(pacman.getCurrentPosition().nextPosition())){
+                        if (table.isInsideTable(pacman.peekNextPosition())){
                             pacman.move();
                         }
                         else {
@@ -73,6 +73,7 @@ public class Simulator {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+                System.out.println("Please input valid command.");
             }
         }
     }

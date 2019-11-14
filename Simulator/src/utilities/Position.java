@@ -11,15 +11,6 @@ public class Position {
     }
 
     /**
-     * checked nextPosition by the simulator, the move forward is safe
-     */
-
-    public void moveFoward(){
-        this.setCoord(nextPosition());
-    }
-
-
-    /**
      * Calculates next coordinates based on current Pacman`s orientation and coordination
      * @return next step the Pacman will step through
      */

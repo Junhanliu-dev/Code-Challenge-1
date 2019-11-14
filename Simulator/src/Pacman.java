@@ -1,7 +1,9 @@
+import utilities.Coordination;
 import utilities.Direction;
 import utilities.Orientation;
 import utilities.Position;
 
+import	java.time.Period;
 public class Pacman {
 
     private Position currentPosition;
@@ -10,8 +12,9 @@ public class Pacman {
     }
 
     public void move(){
-        currentPosition.moveFoward();
+        currentPosition.setCoord(peekNextPosition());
     }
+
 
     public void turnLeft(){
         this.currentPosition.setOrientation(Direction.LEFT);
@@ -19,6 +22,9 @@ public class Pacman {
 
     public void turnRight(){
         this.currentPosition.setOrientation(Direction.RIGHT);
+    }
+    public Coordination peekNextPosition(){
+        return this.currentPosition.nextPosition();
     }
 
     public Position getCurrentPosition(){

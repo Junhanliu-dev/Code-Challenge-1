@@ -9,6 +9,7 @@ public enum  Direction {
     LEFT(1),RIGHT(-1);
 
     private final int val;
+    
     Direction(int val) {
         this.val = val;
     }
