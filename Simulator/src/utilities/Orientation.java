@@ -13,7 +13,7 @@ public enum  Orientation {
     SOUTH,
     EAST;
 
-    private static List<Orientation> orientationList = new LinkedList<>(List.of(NORTH,WEST,SOUTH,EAST));
+    private static LinkedList<Orientation> orientationList = new LinkedList<>(List.of(NORTH,WEST,SOUTH,EAST));
 
     /**
      *
@@ -22,6 +22,7 @@ public enum  Orientation {
      * @return new direction based on current orientation and intended direction
      */
     public Orientation turn(Orientation currentOrientation, Direction direction){
+
         int newTurnIndex = orientationList.indexOf(currentOrientation) + (direction.getVal());
 
         if(newTurnIndex >= orientationList.size()){
@@ -30,7 +31,7 @@ public enum  Orientation {
 
         if (newTurnIndex < 0){
 
-            return (Orientation) ((LinkedList)orientationList).getLast();
+            return orientationList.getLast();
         }
 
         return  orientationList.get(newTurnIndex);
@@ -44,22 +45,12 @@ public enum  Orientation {
      */
     public static Orientation parseOrientation(String orientationString) throws PacmanException {
 
-       if (orientationString.equalsIgnoreCase(NORTH.toString())){
-           return NORTH;
-       }
-       else if (orientationString.equalsIgnoreCase(SOUTH.toString())){
-           return SOUTH;
-       }
-        else if (orientationString.equalsIgnoreCase(WEST.toString())){
-           return WEST;
-       }
-        else if (orientationString.equalsIgnoreCase(EAST.toString())){
-           return EAST;
-       }
-        else {
-            throw new PacmanException("Invalid Orientation");
-       }
-
+        try {
+            return Orientation.valueOf(orientationString.toUpperCase());
+        }
+        catch (Exception e){
+            throw new PacmanException("Invalid Orientation input.");
+        }
 
     }
 

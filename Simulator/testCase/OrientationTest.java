@@ -10,10 +10,11 @@ class OrientationTest {
 
     Direction leftSide = Direction.LEFT;
     Direction rightSide = Direction.RIGHT;
+    Orientation orientation;
 
     @Test
     void turnWhenFacingSOUTH() {
-        Orientation orientation = Orientation.SOUTH;
+        orientation = Orientation.SOUTH;
 
         Assert.assertEquals(Orientation.EAST,orientation.turn(orientation,leftSide));
         Assert.assertEquals(Orientation.WEST, orientation.turn(orientation,rightSide));
@@ -21,7 +22,7 @@ class OrientationTest {
 
     @Test
     void turnWhenFacingWEST() {
-        Orientation orientation = Orientation.WEST;
+        orientation = Orientation.WEST;
 
         Assert.assertEquals(Orientation.SOUTH,orientation.turn(orientation,leftSide));
         Assert.assertEquals(Orientation.NORTH, orientation.turn(orientation,rightSide));
@@ -29,7 +30,7 @@ class OrientationTest {
 
     @Test
     void turnWhenFacingNORTH() {
-        Orientation orientation = Orientation.NORTH;
+        orientation = Orientation.NORTH;
 
         Assert.assertEquals(Orientation.WEST,orientation.turn(orientation,leftSide));
         Assert.assertEquals(Orientation.EAST, orientation.turn(orientation,rightSide));
